@@ -41,7 +41,7 @@
       <!-- Start Header Content -->
       <div class="row">
         <div class="col s12 center-align">
-          <h5>Test</h5>
+          <h5>Test1</h5>
         </div>
       </div>
       <!-- End Header Content -->
@@ -220,10 +220,10 @@
           // console.log(resultCalculate);
 
           // Sends messages on behalf of the user to the chat screen where the LIFF app is opened.
-          if (
+          /*if (
             liff.getContext().type !== "none" &&
             liff.getContext().type !== "external"
-          ) {
+          ) {*/
             // Create flex message
             let message = createFlexMessage(
               carYear,
@@ -243,7 +243,7 @@
               .catch((err) => {
                 console.error(err.code, error.message);
               });
-          } else {
+         /* } else {
             // Result table in browser
             createResultTable(
               carYear,
@@ -253,7 +253,7 @@
               resultCalculate,
               customerType
             );
-          }
+          }*/
         }
       }
 
