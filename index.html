@@ -42,28 +42,41 @@
       <div class="row">
         <div class="col s12 center-align">
           <h5>Test1</h5>
-        </div>
+        </div> <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+<script>
+          function runApp() {
+            liff.getProfile().then(profile => {
+              document.getElementById("pictureUrl").src = profile.pictureUrl;
+              // document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
+              document.getElementById("userId2").innerHTML = profile.userId;
+              document.getElementById("displayName").innerHTML =  profile.displayName;
+             
+            }).catch(err => console.error(err));
+          }
+          liff.init({ liffId: "1657801658-71k6mOlO" }, () => {
+            if (liff.isLoggedIn()) {
+              runApp()
+            } else {
+              liff.login();
+            }
+          }).then(() => {
+              // start to use LIFF's api
+              initializeApp();
+          })
+          .catch((err) => {
+            
+          });
+         
+        </script> 
       </div>
     
     </div>
   
 
-    <!-- Start Script For Get Form Values and Calculation -->
-    <script>
-
-
-      
-    // Initialize LIFF
-liff
-  .init({ liffId: "1657801658-71k6mOlO" })
-  .then(() => {
-    runApp();
-  })
-  .catch((err) => {
-    console.error(err.code, error.message);
-  });
-
-function runApp() {
+ 
+<script type="text/javascript">
+ $(document).ready(function () {
+   function runApp() {
   const flexMessage = {
     type: 'flex',
     altText: 'Flex Message ตัวอย่าง',
@@ -105,6 +118,8 @@ function runApp() {
       console.error('เกิดข้อผิดพลาดในการส่ง Flex Message', error);
     });
 }
+ });
+
 
 
     </script>
