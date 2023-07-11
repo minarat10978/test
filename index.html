@@ -33,6 +33,9 @@
         font-family: "Kanit", sans-serif;
       }
     </style>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+     <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+     <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   </head>
 
   <body>
@@ -42,16 +45,31 @@
       <div class="row">
         <div class="col s12 center-align">
           <h5>Test1</h5>
+          <input style="display: none;" name="userId2" id="userId2" value="">  
+          <table style="width: 100%;">
+        
+            <tbody>
+                <tr>
+                <td style=" padding: inherit;">  <img id="pictureUrl" style="width:80px; border-radius:60px;">
+                </td>
+                <td style=" padding: inherit;">   <p id="displayName" style="font-size: 20px;color:white;padding-top: 11%;" ></p>
+                </td>
+
+
+              </tr>
+
+
+            </tbody>
+            </table>
         </div> 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+       
 <script>
           function runApp() {
             liff.getProfile().then(profile => {
-              document.getElementById("pictureUrl").src = profile.pictureUrl;
+            //   document.getElementById("pictureUrl").src = profile.pictureUrl;
               // document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
               document.getElementById("userId2").innerHTML = profile.userId;
-              document.getElementById("displayName").innerHTML =  profile.displayName;
+            //   document.getElementById("displayName").innerHTML =  profile.displayName;
              
             }).catch(err => console.error(err));
           }
@@ -74,7 +92,7 @@
     
     </div>
   
-
+</body>
  
 <script type="text/javascript">
  $(document).ready(function () {
@@ -126,7 +144,7 @@
 
     </script>
       <!-- Integrating the LIFF SDK -->
-    <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+   
 
-  </body>
+
 </html>
