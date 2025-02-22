@@ -1,3 +1,61 @@
+msg.keytoken="ey6hbxxo2T3cBFcekjdXO1GfJzfJAQb8f6XT7UlAPIlZIKDzPFM0BnduVUg+ZR6bN1+tP5gJ/RA1dvfgf77FucRciKJjpEpyRYA7puRkUG6NQyoUI2LvCz3oVpJ6dA8zd/fWRcjP6yMgoBGTTTGYVgdB04t89/1O/w1cDnyilFU="
+msg.output = {
+    "to":msg.payload.events[0].source.userId,
+    "messages":[
+               {
+      "type": "text",
+      "text": "ผมคือ 'cteg-bot' อยากได้รายงานชนิดไหนเลือกเลย !!",
+      "quickReply": {
+        "items": [
+          {
+            "type": "action",
+            "imageUrl": "https://www.clipartmax.com/png/small/89-891160_3d-check-in-icon-website-design-element-isolated-stock-check-in-icon.png",
+            "action": {
+              "type": "message",
+              "label": "รายงานเช็คอินของส่วนงาน",
+              "text": "ReportOrg"
+            }
+            },
+             {
+            "type": "action",
+            "imageUrl": "https://getdrawings.com/free-icon/sunrise-icon-70.png",
+            "action": {
+              "type": "message",
+              "label": "M-รายงานสถิติของส่วนงาน",
+              "text": "ReportOrgStatM"
+            }
+            },
+             {
+            "type": "action",
+            "imageUrl": "https://cdn0.iconfinder.com/data/icons/solar-panel-energy-1/64/08_Sun_cloud_energy_weather_afternoon-512.png",
+            "action": {
+              "type": "message",
+              "label": "N-รายงานสถิติของส่วนงาน",
+              "text": "ReportOrgStatN"
+            }
+            },
+            {
+            "type": "action",
+            "imageUrl": "https://cdn1.iconfinder.com/data/icons/app-6/48/135-512.png",
+            "action": {
+              "type": "message",
+              "label": "E-รายงานสถิติของส่วนงาน",
+              "text": "ReportOrgStatE"
+            }
+            }
+            
+        ]
+      }
+    }
+    ]
+};
+msg.headers = {};
+msg.headers["Method"] = "POST";
+msg.headers["Content-Type"] = "application/json";
+msg.headers["Authorization"] = "Bearer "+ msg.keytoken;
+msg.payload= msg.output;
+return msg;
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
